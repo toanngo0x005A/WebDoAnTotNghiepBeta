@@ -1,0 +1,7 @@
+#TrinhChieuHinhAnh .carousel-item h5, #TrinhChieuHinhAnh .carousel-item p{
+    /*Có thể chỉnh lại màu cho phần text nếu muốn, nhưng ở đây màu đen là hợp lý nhất rồi. 
+    Đang sử dụng giao diện đen nên màu mặc định là đen rồi khỏi chỉnh*/
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* Tạo hiệu ứng hào quang */
+}

@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: black;
+}
+
+
+
+.thanhMenuCuon{
+    position: fixed; /*đặt vào một vị trí cố định trên cửa sổ trình duyệt,
+                    và sẽ không bị di chuyển khi trang được cuộn*/
+    width: 100%;    /*Đặt chiều rộng của */
+    top: 0; /*Đảm bảo luôn đặt phần tử ở đỉnh của cửa sổ trình duyệt.*/
+    z-index: 1000; /* Đảm bảo thanh menu( nói chung là 'thẻ được gán selector này') sẽ hiển thị trên tất cả các phần khác */
+    /*Chức năng: xác định vị trí của một phần tử trong lớp z của trang web.
+    Cụ thể, nó quy định độ ưu tiên hiển thị của một phần tử so với các phần tử khác.
+     -Giá trị của z-index càng lớn thì phần tử đó
+     sẽ hiển thị ở trên các phần tử khác có giá trị z-index nhỏ hơn.
+     -Trong trường hợp của thanh menu, sử dụng z-index: 1000;
+    đảm bảo rằng thanh menu sẽ hiển thị trên tất cả các phần tử khác trên trang web.
+    =>Điều này đảm bảo rằng thanh menu( nói chung là 'thẻ được gán selector này') luôn ở trên cùng,
+    không bị che phủ bởi các phần tử khác khi bạn cuộn trang.
+    "*/
+
+    background-color: #3B82F6; 
+}
+
+/*Khi dưới lg( tức dưới 992px) thì đã thu thành thanh menu 3 gạch rồi nên
+ta có nhiều khoảng trống để đặt Thanh Tìm Kiếm dài hơn*/
+.thanhMenuCuon .form-control{
+        width: 35vw;
+}
+@media (min-width: 992px){
+    .thanhMenuCuon .form-control{
+        width: 20vw;
+    }
+}
+@media (min-width: 1200px){
+    .thanhMenuCuon .form-control{
+        width: 25vw;
+    }
+}
+@media (min-width: 1400px) {
+    .thanhMenuCuon .form-control{
+        width: 30vw;
+    }
+}
+
+
+
+
+.hinhVongDuoiMenu {
+    width: 100%;
+    height: 200px; /* đủ chiều cao để chứa võng rất sâu */
+    line-height: 0;
+    margin-top: -1px;
+}
+
+.hinhVongDuoiMenu svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
