@@ -21,21 +21,21 @@
     </div><!--Chỉ là 1 thẻ tạo khoảng trống màu trắng thôi-->
 
     <header class="thanhMenuCuon navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
+        <div class="container">
             <a class="navbar-brand" href="/CacChuongTrinhPHP/WebSteam/index.php">
                 <img src="Imgs/logo.png" height="35px">
             </a>
 
 
             <!-- ✅ Form tìm kiếm dành cho mobile (chỉ hiện dưới lg) -->
-    <form role="search" class="d-flex me-auto d-block d-lg-none" method="get">
-      <div class="input-group">
-        <input class="form-control" type="search" name="chuoiTimKiemTruyVan" placeholder="Bạn muốn mua gì..." aria-label="Search">
-        <button class="btn btn-success" type="submit">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </div>
-    </form>
+            <form role="search" class="d-flex me-auto d-block d-lg-none" method="get">
+                <div class="input-group">
+                    <input class="form-control" type="search" name="chuoiTimKiemTruyVan" placeholder="Tìm kiếm..." aria-label="Search">
+                    <button class="btn btn-success" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </form>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMucMenu" aria-controls="navbarMucMenu" aria-expanded="false" aria-label="Chuyển đổi trạng thái Menu">
                 <span class="navbar-toggler-icon"></span>
@@ -51,12 +51,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/CacChuongTrinhPHP/WebSteam/library_NguoiDung.php">
-                            <i class="fa-solid fa-gamepad"></i> Thư viện
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/CacChuongTrinhPHP/WebSteam/tinTuc.php">
-                            <i class="fa-solid fa-newspaper"></i> Tin tức
+                            <i class="fa-solid fa-list"></i> Danh mục
                         </a>
                     </li>
                     
@@ -66,7 +61,7 @@
                 <form role="search" class="d-flex me-auto d-none d-lg-flex" method="get">
                 <!--me-auto( tức margin-end: auto) → đẩy phần tử về bên trái, các phần tử sau nó bị đẩy sang phải -->
                     <div class="input-group">
-                    <input class="form-control" type="search" name="chuoiTimKiemTruyVan" placeholder="Bạn muốn mua gì..." aria-label="Search">
+                    <input class="form-control" type="search" name="chuoiTimKiemTruyVan" placeholder="Tìm kiếm..." aria-label="Search">
                     <button class="btn btn-success" type="submit">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
@@ -74,12 +69,12 @@
                 </form>
 
                 <!--Menu bêm phải-->
-                <ul class="navbar-nav mb-4 mb-lg-0 order-3">
+                <ul class="navbar-nav mb-4 mb-lg-0">
                     
                     <!-- Đã đăng nhập -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" aria-expanded="false">
-                            Tên người dùng
+                            <i class="fa-solid fa-user"></i> Tên người dùng
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/CacChuongTrinhPHP/WebSteam/logIn/user_TaiKhoan.php">Chi tiết tài khoản</a></li>
@@ -120,7 +115,7 @@
     </div>
 
 
-    <div class="container" style="margin-top: -150px">
+    <div class="container" style="margin-top: -200px">
     <div class="row align-items-start">
         <!-- PHẦN DANH MỤC (4/12) -->
         <div class="col-lg-4 d-none d-lg-block">
@@ -149,7 +144,7 @@
                 </li>
 
                 <li class="list-group-item">
-                <strong>Laptop</strong>
+                <strong><i class="fa-solid fa-laptop"></i> Laptop</strong>
                 <div class="ms-3 mt-2">
                     <span>Acer:</span>
                     <a href="#" class="text-decoration-none me-2">Aspire 5</a>
@@ -200,13 +195,38 @@
                         </a>
                     </div>
                     <div class="carousel-item">
+                        <a href="TRANGNE.HTML">
+                            <img src="Imgs/TrinhChieu/794-YexIl.webp" class="d-block w-100" alt="..." draggable="false">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="TRANGNE.HTML">
+                            <img src="Imgs/TrinhChieu/785-YcAeq.webp" class="d-block w-100" alt="..." draggable="false">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
                         <a href="TRANG2NE.HTML">
                             <img src="Imgs/TrinhChieu/765-GtzEH.webp" class="d-block w-100" alt="..." draggable="false">
                         </a>
                     </div>
                     <div class="carousel-item">
                         <a href="TRANGNE.HTML">
-                            <img src="Imgs/TrinhChieu/785-YcAeq.webp" class="d-block w-100" alt="..." draggable="false">
+                            <img src="Imgs/TrinhChieu/787-qNsMc.webp" class="d-block w-100" alt="..." draggable="false">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="TRANGNE.HTML">
+                            <img src="Imgs/TrinhChieu/795-yEbMK.jpg" class="d-block w-100" alt="..." draggable="false">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="TRANGNE.HTML">
+                            <img src="Imgs/TrinhChieu/793-mHpxm.webp" class="d-block w-100" alt="..." draggable="false">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="TRANGNE.HTML">
+                            <img src="Imgs/TrinhChieu/797-OUATu.webp" class="d-block w-100" alt="..." draggable="false">
                         </a>
                     </div>
                 </div>
@@ -227,7 +247,7 @@
 
 
 
-            <div class="row text-center mt-4 g-3">
+            <div class="chinhSachNenCheo row text-center mt-4 g-3">
                 <div class="col-6 col-lg-3">
                     <img src="Imgs/icon/policy3.svg" alt="Chất lượng" style="width: 60px;">
                     <p class="mt-2 mb-0">Chất lượng cao</p>
@@ -251,6 +271,9 @@
     </div>
     </div>
 
+
+    <div id=""
+
     <h1>sdjfsjdsdjfsj</h1>
     <h1>sdjfsjdsdjfsj</h1>
     <h1>sdjfsjdsdjfsj</h1>
@@ -267,8 +290,6 @@
     <h1>sdjfsjdsdjfsj</h1>
     <h1>sdjfsjdsdjfsj</h1>
 
-
-<script src="JS/homePage.js"></script>
 
 </body>
 </html>

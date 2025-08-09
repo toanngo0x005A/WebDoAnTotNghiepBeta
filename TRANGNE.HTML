@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flash Sale Mỗi Ngày</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tiêu đề Flash Sale */
+.flash-sale-header {
+    background: linear-gradient(to right, #ff0000, #ff6600);
+    color: yellow;
+    padding: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.countdown {
+    display: flex;
+    gap: 5px;
+    font-size: 16px;
+}
+
+.countdown div {
+    background: white;
+    color: red;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+
+/* Swiper */
+.swiper {
+    padding: 20px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    position: relative;
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #FFD700;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 3px;
+}
+
+.installment {
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 5px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 3px;
+}
+
+.warranty {
+    background: red;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.price {
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: gray;
+    font-size: 14px;
+}
+
+/* Nút điều hướng */
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
+    background: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 18px;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<!-- Tiêu đề Flash Sale -->
+<div class="flash-sale-header">
+    <div>FLASH SALE MỖI NGÀY</div>
+    <div class="countdown">
+        <div id="days">00</div>:
+        <div id="hours">00</div>:
+        <div id="minutes">00</div>:
+        <div id="seconds">00</div>
+    </div>
+</div>
+
+<!-- Swiper -->
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <!-- Sản phẩm mẫu -->
+        <div class="swiper-slide">
+            <div class="product-card">
+                <div class="installment">Trả góp 0%</div>
+                <div class="discount-badge">13%</div>
+                <img src="https://via.placeholder.com/200x200" alt="Sản phẩm">
+                <div class="warranty">BẢO HÀNH 1 ĐỔI 1 12 THÁNG</div>
+                <div class="price">8.690.000 đ</div>
+                <div class="old-price">9.990.000 đ</div>
+            </div>
+        </div>
+
+        <div class="swiper-slide">
+            <div class="product-card">
+                <div class="installment">Trả góp 0%</div>
+                <div class="discount-badge">16%</div>
+                <img src="https://via.placeholder.com/200x200" alt="Sản phẩm">
+                <div class="warranty">BẢO HÀNH 1 ĐỔI 1 12 THÁNG</div>
+                <div class="price">4.190.000 đ</div>
+                <div class="old-price">4.990.000 đ</div>
+            </div>
+        </div>
+
+        <!-- Thêm các sản phẩm khác -->
+    </div>
+
+    <!-- Nút điều hướng -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+// Khởi tạo Swiper (đa nền tảng)
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1.2,
+    spaceBetween: 10,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        480: { slidesPerView: 2, spaceBetween: 15 },
+        768: { slidesPerView: 3, spaceBetween: 20 },
+        1024: { slidesPerView: 4, spaceBetween: 20 },
+        1440: { slidesPerView: 5, spaceBetween: 25 }
+    }
+});
+
+// Đồng hồ đếm ngược 6 tiếng
+var countdownDate = new Date().getTime() + (6 * 60 * 60 * 1000);
+var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countdownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = (days < 10 ? "0" : "") + days;
+    document.getElementById("hours").innerHTML = (hours < 10 ? "0" : "") + hours;
+    document.getElementById("minutes").innerHTML = (minutes < 10 ? "0" : "") + minutes;
+    document.getElementById("seconds").innerHTML = (seconds < 10 ? "0" : "") + seconds;
+
+    if (distance < 0) {
+        clearInterval(x);
+        document.querySelector(".countdown").innerHTML = "Hết giờ";
+    }
+}, 1000);
+</script>
+
+</body>
+</html>
